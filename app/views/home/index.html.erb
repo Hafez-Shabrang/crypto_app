@@ -1,0 +1,15 @@
+<h1 class="my-3">News</h1>
+<div class="row">
+    <% @news["Data"].each do |n| %>
+      <div class="col-md-4">
+          <div class="card my-4" style="width: 20rem;">
+            <%= image_tag n["imageurl"] %>
+            <div class="card-body">
+              <h5 class="card-title my-3 py-3"><%= n["title"] %></h5>
+              <p class="card-text"><%= truncate(n["body"], length: 100) %></p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+      </div>
+    <% end %>
+</div>

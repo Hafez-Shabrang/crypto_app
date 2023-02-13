@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <%= link_to "CRYPTO-APP", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "News", root_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Prices", home_prices_path, class: "nav-link active" %>
+        </li>
+      </ul>
+      <%= form_with(scope: :search,url: home_search_path, method: :get, class: "d-flex") do |f| %>
+        <%= f.text_field :coin, class: "form-control me-2", placeholder: "Search your coin" %>
+        <%= f.submit "Search", class: "btn btn-outline-success" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

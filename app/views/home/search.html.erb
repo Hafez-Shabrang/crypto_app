@@ -1,0 +1,31 @@
+<div class="row" id="search">
+  <% if @single_price["DISPLAY"] %>
+    <h1 class="my-3">Search Result</h1>
+    <table class="table">
+      <thead class="bg-secondary text-white">
+      <tr>
+        <th scope="col" class="px-5">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">24hr High</th>
+        <th scope="col">24hr Low</th>
+        <th scope="col">Market Cap</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @single_price["DISPLAY"].each do |key, value| %>
+        <tr>
+          <td class="px-5"><%= key %></td>
+          <td><%= value["USD"]["PRICE"] %></td>
+          <td><%= value["USD"]["HIGHDAY"] %></td>
+          <td><%= value["USD"]["LOWDAY"] %></td>
+          <td><%= value["USD"]["MKTCAP"] %></td>
+        </tr>
+      <% end %>
+  <% else %>
+    <h1 class="my-3 text-danger">Coin not found</h1>
+  <% end %>
+    </tbody>
+  </table>
+</div>
+
+

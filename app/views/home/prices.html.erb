@@ -1,0 +1,26 @@
+<h1 class="my-3">Prices</h1>
+<div class="row">
+  <table class="table">
+    <thead class="bg-secondary text-white">
+    <tr>
+      <th scope="col" class="px-5">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">24hr High</th>
+      <th scope="col">24hr Low</th>
+      <th scope="col">Market Cap</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @prices["DISPLAY"].each do |key, value| %>
+      <tr>
+
+        <td class="px-5"><%= key %></td>
+        <td><%= value["USD"]["PRICE"] %></td>
+        <td><%= value["USD"]["HIGHDAY"] %></td>
+        <td><%= value["USD"]["LOWDAY"] %></td>
+        <td><%= value["USD"]["MKTCAP"] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
